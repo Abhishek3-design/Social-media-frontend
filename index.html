@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>Simple Social</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Simple Social home"><span class="brand-mark">✦</span> Simple Social</a>
+    <div class="top-actions">
+      <span id="header-user" class="header-user hidden"></span>
+      <button id="logout-btn" class="button button-quiet hidden" type="button">Log out</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="auth-view" class="auth-layout">
+      <div class="intro-panel">
+        <div class="eyebrow">YOUR PEOPLE, YOUR MOMENTS</div>
+        <h1>Good things are<br><span>better shared.</span></h1>
+        <p>Share photos and videos, join the conversation, and keep up with your community.</p>
+        <div class="intro-decoration" aria-hidden="true"><span>✦</span><span>♡</span><span>↗</span></div>
+      </div>
+      <div class="auth-card">
+        <div class="tabs" role="tablist" aria-label="Account">
+          <button id="login-tab" class="tab active" role="tab" aria-selected="true" type="button">Log in</button>
+          <button id="signup-tab" class="tab" role="tab" aria-selected="false" type="button">Create account</button>
+        </div>
+        <div id="auth-message" class="message hidden" role="status"></div>
+        <form id="login-form">
+          <h2>Welcome back</h2>
+          <p class="muted">Log in to see what's happening.</p>
+          <label for="login-email">Email</label>
+          <input id="login-email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <label for="login-password">Password</label>
+          <input id="login-password" type="password" autocomplete="current-password" placeholder="Your password" required>
+          <button class="button button-primary full" type="submit">Log in <span>→</span></button>
+        </form>
+        <form id="signup-form" class="hidden">
+          <h2>Join Simple Social</h2>
+          <p class="muted">Create an account to start sharing.</p>
+          <label for="signup-email">Email</label>
+          <input id="signup-email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <label for="signup-password">Password</label>
+          <input id="signup-password" type="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters" required>
+          <button class="button button-primary full" type="submit">Create account <span>→</span></button>
+        </form>
+        <p class="fine-print">By continuing, you agree to use the community respectfully.</p>
+      </div>
+    </section>
+
+    <section id="app-view" class="app-layout hidden">
+      <aside class="sidebar">
+        <div class="profile-chip"><div id="avatar" class="avatar">S</div><div><strong id="sidebar-email">You</strong><small>Community member</small></div></div>
+        <button class="nav-item active" data-page="feed" type="button"><span>⌂</span> Home feed</button>
+        <button class="nav-item" data-page="upload" type="button"><span>＋</span> Create a post</button>
+        <div class="sidebar-note"><span class="note-icon">✦</span><strong>Make someone's day.</strong><p>A photo, a thought, or a kind comment can go a long way.</p></div>
+      </aside>
+
+      <section class="main-column">
+        <section id="feed-page" class="page">
+          <div class="page-heading"><div><div class="eyebrow">YOUR COMMUNITY</div><h1>Home feed</h1><p class="muted">See what everyone is sharing.</p></div><button id="refresh-btn" class="button button-outline" type="button">↻ Refresh</button></div>
+          <div id="feed-message" class="message hidden" role="status"></div>
+          <div id="feed-list" class="feed-list"></div>
+        </section>
+
+        <section id="upload-page" class="page hidden">
+          <div class="page-heading"><div><div class="eyebrow">SHARE A MOMENT</div><h1>Create a post</h1><p class="muted">Add a photo or video and tell your story.</p></div></div>
+          <div class="composer-card">
+            <div class="composer-user"><div id="upload-avatar" class="avatar">S</div><div><strong id="upload-email">You</strong><small>Sharing with your community</small></div></div>
+            <form id="upload-form">
+              <label for="caption">Caption <span class="muted">(optional)</span></label>
+              <textarea id="caption" rows="4" maxlength="2000" placeholder="What's on your mind?"></textarea>
+              <label for="media-file" class="file-drop"><span class="file-icon">↥</span><strong>Choose a photo or video</strong><small>PNG, JPG, MP4, MOV, AVI, MKV or WEBM</small><span id="file-name" class="file-name">No file selected</span></label>
+              <input id="media-file" type="file" accept="image/png,image/jpeg,video/mp4,video/quicktime,video/x-msvideo,video/x-matroska,video/webm" required>
+              <div id="upload-message" class="message hidden" role="status"></div>
+              <button class="button button-primary full" type="submit">Share post <span>→</span></button>
+            </form>
+          </div>
+        </section>
+      </section>
+      <aside class="right-rail"><div class="rail-card"><div class="rail-symbol">✦</div><h3>A little reminder</h3><p>Be kind, give credit, and help make Simple Social a welcoming place for everyone.</p></div><div class="rail-footer">Simple Social · Made for sharing</div></aside>
+    </section>
+    <footer class="site-footer">Simple Social <span>•</span> Share moments, stay connected.</footer>
+  </main>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
